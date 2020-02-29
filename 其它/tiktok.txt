@@ -1,0 +1,11 @@
+#抖音换地区
+(.*video_id=\w{32})(.*watermark=)(.*) url 302 $1
+
+(?<=(carrier|account|sys)_region=)CN url 307 JP
+
+#美区
+;(?<=version_code=)\d{1,}.\d{1}\.\d{1} url 307 14.0.0
+#港区
+(?<=version_code=)\d{1,}.\d{1}\.\d{1} url 307 8.4.0
+
+api*.tiktokv.com, *.tiktokcdn.com, api*.musical.ly, api*.amemv.com, aweme*.snssdk.com

@@ -1,0 +1,21 @@
+远程
+QuantumultX
+[rewrite_local]
+https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl url 302 http://api.bili.best:22333/geturl/
+https:\/\/api.bilibili.com\/pgc\/view\/app\/season url 302 http://api.bili.best:22333/season/
+
+Shadowrocket
+[URL Rewrite]
+^https://api.bilibili.com/pgc/view/app/season http://api.bili.best:22333/season/ 302
+^https://api.bilibili.com/pgc/player/api/playurl http://api.bili.best:22333/geturl/ 302
+
+Surge
+[URL Rewrite]
+https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl http://api.bili.best:22333/geturl/ 302
+https:\/\/api.bilibili.com\/pgc\/view\/app\/season http://api.bili.best:22333/season/ 302
+
+本地
+^https:\/\/api.bilibili.com\/pgc\/player\/api\/playurl url script-response-body bilibili.unblock.playurl.min.js
+^https:\/\/api.bilibili.com\/pgc\/view\/app\/season url script-response-body bilibili.unblock.season.min.js
+
+api.bilibili.com
